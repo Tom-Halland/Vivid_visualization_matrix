@@ -1,0 +1,54 @@
+.dashboard-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color);
+}
+
+.dashboard-header {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #357abd 100%);
+  color: white;
+  padding: 20px 30px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.dashboard-header h2 {
+  margin: 0 0 15px 0;
+  font-size: 28px;
+  font-weight: 600;
+}
+
+.dashboard-nav {
+  display: flex;
+  gap: 10px;
+}
+
+.nav-button {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.nav-button:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-button.active {
+  background-color: white;
+  color: var(--primary-color);
+  border-color: white;
+}
+
+.visualization-viewport {
+  flex: 1;
+  overflow: auto;
+  background: white;
+}
