@@ -110,8 +110,11 @@ const AgenticSankey = ({ height = '100%', id = 'agentic-pipeline-sankey' }) => {
       .attr('width', d => d.x1 - d.x0)
       .attr('fill', '#4a90e2')
       .attr('opacity', 0.7)
-      .on('hover', function() {
+      .on('mouseover', function() {
         d3.select(this).attr('opacity', 1);
+      })
+      .on('mouseout', function() {
+        d3.select(this).attr('opacity', 0.7);
       });
 
     // Add node labels
