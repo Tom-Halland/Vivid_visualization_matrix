@@ -59,7 +59,7 @@ const RAGStateMachine = ({ height = '100%', id = 'agentic-rag-loop-diagram' }) =
     if (element) {
       element.innerHTML = '';
       mermaid.contentLoaded();
-      mermaid.render('rag-state-diagram', diagram).then(({ svg }) => {
+      mermaid.render(id, diagram).then(({ svg }) => {
         element.innerHTML = svg;
       });
     }
