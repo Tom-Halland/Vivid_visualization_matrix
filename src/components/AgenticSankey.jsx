@@ -66,7 +66,7 @@ const AgenticSankey = ({ height = '100%', id = 'agentic-pipeline-sankey' }) => {
     const sankeyGenerator = sankey()
       .nodeWidth(15)
       .nodePadding(50)
-      .extent([[1, 1], [width - 1, containerHeight - 1]]);
+      .extent([[1, 1], [Math.max(2, width - 1), Math.max(2, containerHeight - 1)]]);
 
     // Generate sankey layout
     const { nodes, links } = sankeyGenerator({
