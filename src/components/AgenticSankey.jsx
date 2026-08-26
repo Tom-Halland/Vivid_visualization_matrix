@@ -66,7 +66,7 @@ const AgenticSankey = ({ height = '100%', id = 'agentic-pipeline-sankey' }) => {
     const sankeyGenerator = sankey()
       .nodeWidth(15)
       .nodePadding(50)
-      .extent([[1, 1], [width - 1, containerHeight - 1]]);
+      .extent([[1, 1], [Math.max(2, width - 1), Math.max(2, containerHeight - 1)]]);
 
     // Generate sankey layout
     const { nodes, links } = sankeyGenerator({
@@ -110,8 +110,11 @@ const AgenticSankey = ({ height = '100%', id = 'agentic-pipeline-sankey' }) => {
       .attr('width', d => d.x1 - d.x0)
       .attr('fill', '#4a90e2')
       .attr('opacity', 0.7)
-      .on('hover', function() {
+      .on('mouseover', function() {
         d3.select(this).attr('opacity', 1);
+      })
+      .on('mouseout', function() {
+        d3.select(this).attr('opacity', 0.7);
       });
 
     // Add node labels
