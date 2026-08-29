@@ -110,10 +110,10 @@ const AgenticSankey = ({ height = '100%', id = 'agentic-pipeline-sankey' }) => {
       .attr('width', d => d.x1 - d.x0)
       .attr('fill', '#4a90e2')
       .attr('opacity', 0.7)
-      .on('mouseover', function() {
+      .on('mouseover', function () {
         d3.select(this).attr('opacity', 1);
       })
-      .on('mouseout', function() {
+      .on('mouseout', function () {
         d3.select(this).attr('opacity', 0.7);
       });
 
@@ -137,10 +137,10 @@ const AgenticSankey = ({ height = '100%', id = 'agentic-pipeline-sankey' }) => {
       <div className="controls-panel">
         <div className="control-group">
           <label>Pipeline Complexity</label>
-          <input 
-            type="range" 
-            min="0" 
-            max="100" 
+          <input
+            type="range"
+            min="0"
+            max="100"
             value={complexity}
             onChange={(e) => setComplexity(Number(e.target.value))}
             className="slider"
@@ -149,10 +149,10 @@ const AgenticSankey = ({ height = '100%', id = 'agentic-pipeline-sankey' }) => {
         </div>
         <div className="control-group">
           <label>Error Injection Rate</label>
-          <input 
-            type="range" 
-            min="0" 
-            max="50" 
+          <input
+            type="range"
+            min="0"
+            max="50"
             value={errorRate}
             onChange={(e) => setErrorRate(Number(e.target.value))}
             className="slider"
